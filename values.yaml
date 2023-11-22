@@ -1,0 +1,4 @@
+# 'extraContainerdArgs' is extra arguments to add to the local node containerd service.
+# Set a value to null to remove it from the arguments.
+extraContainerdArgs:
+  --config: /etc/containerd/custom-config.toml
