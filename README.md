@@ -6,6 +6,8 @@
 
 Follow `emscripten` install instruction [here](https://emscripten.org/docs/getting_started/downloads.html).
 
+To be able to run it using Docker, please follow the instructions [here](https://docs.docker.com/desktop/wasm/).
+
 ## Native
 
 Compile your C code and run it using:
