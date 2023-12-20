@@ -8,7 +8,9 @@ Follow `emscripten` install instruction [here](https://emscripten.org/docs/getti
 
 To be able to run it using Docker, please follow the instructions [here](https://docs.docker.com/desktop/wasm/).
 
-## Native
+## Deployments
+
+### Native
 
 Compile your C code and run it using:
 ```
@@ -16,11 +18,11 @@ gcc hello.c -o hello.out
 ./hello.out
 ```
 
-## Wasm
+### Wasm
 
 NOTE: `./emcc` script can be found in `emsdk/emscripten` directory.
 ```
-`./emcc hello.c -o hello.wasm
+./emcc hello.c -o hello.wasm
 ```
 
 Then you can run WASM script using WasmEdge runtime:
@@ -28,7 +30,7 @@ Then you can run WASM script using WasmEdge runtime:
 wasmedge hello.wasm
 ```
 
-## In Docker
+### In Docker
 
 First create a `Dockerfile`, build it and push it using the following commands:
 ```
