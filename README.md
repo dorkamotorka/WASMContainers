@@ -6,7 +6,11 @@
 
 Follow `emscripten` install instruction [here](https://emscripten.org/docs/getting_started/downloads.html).
 
-## Native
+To be able to run it using Docker, please follow the instructions [here](https://docs.docker.com/desktop/wasm/).
+
+## Deployments
+
+### Native
 
 Compile your C code and run it using:
 ```
@@ -14,11 +18,11 @@ gcc hello.c -o hello.out
 ./hello.out
 ```
 
-## Wasm
+### Wasm
 
 NOTE: `./emcc` script can be found in `emsdk/emscripten` directory.
 ```
-`./emcc hello.c -o hello.wasm
+./emcc hello.c -o hello.wasm
 ```
 
 Then you can run WASM script using WasmEdge runtime:
@@ -26,7 +30,7 @@ Then you can run WASM script using WasmEdge runtime:
 wasmedge --enable-all-statistics hello.wasm
 ```
 
-## In Docker
+### In Docker
 
 First build the `Dockerfile` and push the images using the following commands:
 ```
