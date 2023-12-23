@@ -23,19 +23,26 @@ NOTE: `./emcc` script can be found in `emsdk/emscripten` directory.
 
 Then you can run WASM script using WasmEdge runtime:
 ```
-wasmedge hello.wasm
+wasmedge --enable-all-statistics hello.wasm
 ```
 
 ## In Docker
 
-First create a `Dockerfile`, build it and push it using the following commands:
+First build the `Dockerfile` and push the images using the following commands:
 ```
+docker build -t <username>/hello-world-c -f Dockerfile.c .
+docker push <username>/hello-world-c
+
+# Just for testing - not used for benchmarking
 docker buildx build --platform wasi/wasm -t <username>/hello-world-wasm .
 docker push <username>/hello-world-wasm
 ``` 
 
 Then simply run the following command:
 ```
+docker run <username>/hello-world-c
+
+# Just for testing - not used for benchmarking
 docker run \
   --runtime=io.containerd.wasmedge.v1 \
   --platform=wasi/wasm \
