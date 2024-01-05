@@ -34,10 +34,10 @@ wasmedge --enable-all-statistics hello.wasm
 
 First build the `Dockerfile` and push the images using the following commands:
 ```
-docker build -t <username>/hello-world-c -f Dockerfile.c .
+docker build -t <username>/hello-world-c -f Dockerfile .
 docker push <username>/hello-world-c
 
-# Just for testing - not used for benchmarking
+# WASM in Container
 docker buildx build --platform wasi/wasm -t <username>/hello-world-wasm .
 docker push <username>/hello-world-wasm
 ``` 
