@@ -1,0 +1,3 @@
+FROM scratch
+COPY sleep.wasm .
+ENTRYPOINT [ "/sleep.wasm" ]
